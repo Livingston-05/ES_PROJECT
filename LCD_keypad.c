@@ -24,8 +24,8 @@ int main(void)
     LPC_GPIO2->FIODIR |= 0xF << 10;
     LPC_GPIO1->FIODIR &= 0xF87FFFFF;
     LPC_GPIO0->FIODIR |= 0xF << 23 | 1 << 27 | 1 << 28;
-		LPC_GPIO0->FIODIR=0xF<<4;
-		LPC_GPIO0->FIODIR=0xF<<8;
+		LPC_GPIO0->FIODIR|=0xF<<4;
+		LPC_GPIO0->FIODIR|=0xF<<8;
     clear_ports();
     delay_lcd(3200);
     lcd_init();
